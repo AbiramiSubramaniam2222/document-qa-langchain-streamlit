@@ -46,5 +46,5 @@ streamlit run app.py
 ![RAG Answer](assets/screenshots3.png)
 
 ## 🔗 Live Demo
-👉 http://http://51.20.18.139:8501
+👉 http://51.20.18.139:8501
 
