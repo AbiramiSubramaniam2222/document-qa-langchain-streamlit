@@ -33,3 +33,15 @@ streamlit run app.py
 - Deploy behind a reverse proxy (Nginx)
 - Add logging and monitoring
 - Support larger documents and batch uploads
+
+## Demo Screenshots
+
+### Streamlit App (Document Upload & Q&A)
+![App Screenshot](assets/screenshots1.png)
+
+### Deployed on AWS EC2
+![EC2 Deployment](assets/screenshots2.png)
+
+### Answer Generation Example
+![RAG Answer](assets/screenshots3.png)
+
