@@ -97,7 +97,7 @@ Answer:
         st.subheader("Answer")
         st.write(response.content)
     
-    with st.expander(f"Retrieved Context ({len(docs)} chunks)"):
-        for i, doc in enumerate(docs, 1):
-            st.markdown(f"**Chunk {i}:**")
-            st.write(doc.page_content[:800])
+        with st.expander(f"Retrieved Context ({len(docs)} chunks)"):
+            for i, doc in enumerate(docs, 1):
+                st.markdown(f"**Chunk {i}:**")
+                st.write(doc.page_content[:800])
