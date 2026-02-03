@@ -76,7 +76,7 @@ Answer:
     # -----------------------------
     llm = ChatOpenAI(
         model="gpt-3.5-turbo",
-        temperature=0
+        temperature=0.2
     )
 
     chain = prompt | llm
@@ -87,7 +87,7 @@ Answer:
     question = st.text_input("Ask a question from the document")
 
     if question:
-        docs = vectorstore.similarity_search(question, k=3)
+        docs = vectorstore.similarity_search(question, k=5)
         context = "\n\n".join([d.page_content for d in docs])
 
         response = chain.invoke(
@@ -96,3 +96,8 @@ Answer:
 
         st.subheader("Answer")
         st.write(response.content)
+    
+    with st.expander(f"Retrieved Context ({len(docs)} chunks)"):
+        for i, doc in enumerate(docs, 1):
+            st.markdown(f"**Chunk {i}:**")
+            st.write(doc.page_content[:800])
