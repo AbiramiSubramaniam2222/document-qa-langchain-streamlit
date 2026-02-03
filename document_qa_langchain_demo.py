@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
@@ -50,7 +50,7 @@ if uploaded_file:
 # ====================
 # Step 3: Generate embeddings with SentenceTransformer (all-MiniLM-L6-v2)
 # ====================
-    embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = OpenAIEmbeddings()
 
 # ====================
 # Step 4: Build FAISS vectorstore index to enable semantic search
